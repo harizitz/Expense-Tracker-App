@@ -1,359 +1,306 @@
 {
-	"info": {
-		"_postman_id": "45e71dea-8588-4fc1-948a-3407a542d5b9",
-		"name": "Expense App",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Register",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"admin\",\r\n    \"password\":\"admin\",\r\n    \"email\":\"admin123@gmail.com\",\r\n    \"age\":21\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/register",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"register"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"admin123@gmail.com\",\r\n    \"password\":\"admin\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update User",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyM0BnbWFpbC5jb20iLCJleHAiOjE2ODExMjc2NTIsImlhdCI6MTY4MTEyNDA1Mn0._-IU_Xq0j09MFkoHt6IRrVMSOYK4OFQMX2E5jL6vZ8axZ7z59wqctkJEt9YIVmN5MozUk3w8crjLdIRLGLburQ",
-						"type": "default"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"admin\",\r\n    \"password\":\"admin\",\r\n    \"email\":\"admin123@gmail.com\",\r\n    \"age\":23\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/profile",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"profile"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get User",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyM0BnbWFpbC5jb20iLCJleHAiOjE2ODExMjc2NTIsImlhdCI6MTY4MTEyNDA1Mn0._-IU_Xq0j09MFkoHt6IRrVMSOYK4OFQMX2E5jL6vZ8axZ7z59wqctkJEt9YIVmN5MozUk3w8crjLdIRLGLburQ",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/profile",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"profile"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete User",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyM0BnbWFpbC5jb20iLCJleHAiOjE2ODExMjc2NTIsImlhdCI6MTY4MTEyNDA1Mn0._-IU_Xq0j09MFkoHt6IRrVMSOYK4OFQMX2E5jL6vZ8axZ7z59wqctkJEt9YIVmN5MozUk3w8crjLdIRLGLburQ",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/deactivate",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"deactivate"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add Expense",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyM0BnbWFpbC5jb20iLCJleHAiOjE2ODExMjgxNzIsImlhdCI6MTY4MTEyNDU3Mn0.ozrm4anUH5_Kr11ODzvKo1mCtEYp4I728mHg79tebQHAJM4Og6cX6LkqefPLiT08uvE51WpB85rfsZiUckkxfQ",
-						"type": "default"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"Vessels\",\r\n    \"description\":\"Kitchen Vessels\",\r\n    \"amount\":200,\r\n    \"category\":\"Home Needs\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/addExpense",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"addExpense"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Expense",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyM0BnbWFpbC5jb20iLCJleHAiOjE2ODExMjgxNzIsImlhdCI6MTY4MTEyNDU3Mn0.ozrm4anUH5_Kr11ODzvKo1mCtEYp4I728mHg79tebQHAJM4Og6cX6LkqefPLiT08uvE51WpB85rfsZiUckkxfQ",
-						"type": "default"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"Vessels\",\r\n    \"description\":\"Kitchen Vessels and utensils\",\r\n    \"amount\":200,\r\n    \"category\":\"HomeNeeds\"\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/update/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"update",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read All Expenses",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyM0BnbWFpbC5jb20iLCJleHAiOjE2ODExMjgxNzIsImlhdCI6MTY4MTEyNDU3Mn0.ozrm4anUH5_Kr11ODzvKo1mCtEYp4I728mHg79tebQHAJM4Og6cX6LkqefPLiT08uvE51WpB85rfsZiUckkxfQ",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/expenses",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"expenses"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read Expenses by category",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyM0BnbWFpbC5jb20iLCJleHAiOjE2ODExMjgxNzIsImlhdCI6MTY4MTEyNDU3Mn0.ozrm4anUH5_Kr11ODzvKo1mCtEYp4I728mHg79tebQHAJM4Og6cX6LkqefPLiT08uvE51WpB85rfsZiUckkxfQ",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/expense/category?category=HomeNeeds",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"expense",
-						"category"
-					],
-					"query": [
-						{
-							"key": "category",
-							"value": "HomeNeeds"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read Expenses by Name",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyM0BnbWFpbC5jb20iLCJleHAiOjE2ODExMjgxNzIsImlhdCI6MTY4MTEyNDU3Mn0.ozrm4anUH5_Kr11ODzvKo1mCtEYp4I728mHg79tebQHAJM4Og6cX6LkqefPLiT08uvE51WpB85rfsZiUckkxfQ",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/expense/name?name=ves",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"expense",
-						"name"
-					],
-					"query": [
-						{
-							"key": "name",
-							"value": "ves"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read Expense by id",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyM0BnbWFpbC5jb20iLCJleHAiOjE2ODExMjgxNzIsImlhdCI6MTY4MTEyNDU3Mn0.ozrm4anUH5_Kr11ODzvKo1mCtEYp4I728mHg79tebQHAJM4Og6cX6LkqefPLiT08uvE51WpB85rfsZiUckkxfQ",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/expense/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"expense",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Expense by id",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyM0BnbWFpbC5jb20iLCJleHAiOjE2ODExMjgxNzIsImlhdCI6MTY4MTEyNDU3Mn0.ozrm4anUH5_Kr11ODzvKo1mCtEYp4I728mHg79tebQHAJM4Og6cX6LkqefPLiT08uvE51WpB85rfsZiUckkxfQ",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/expense/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"expense",
-						"2"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "45e71dea-8588-4fc1-948a-3407a542d5b9",
+    "name": "Expense App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"admin\",\r\n    \"password\":\"admin\",\r\n    \"email\":\"admin123@gmail.com\",\r\n    \"age\":21\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["register"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"admin123@gmail.com\",\r\n    \"password\":\"admin\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update User",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"admin\",\r\n    \"password\":\"admin\",\r\n    \"email\":\"admin123@gmail.com\",\r\n    \"age\":23\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get User",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete User",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/deactivate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["deactivate"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Expense",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Vessels\",\r\n    \"description\":\"Kitchen Vessels\",\r\n    \"amount\":200,\r\n    \"category\":\"Home Needs\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/addExpense",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["addExpense"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Expense",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Vessels\",\r\n    \"description\":\"Kitchen Vessels and utensils\",\r\n    \"amount\":200,\r\n    \"category\":\"HomeNeeds\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/update/2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["update", "2"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read All Expenses",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/expenses",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["expenses"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read Expenses by category",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/expense/category?category=HomeNeeds",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["expense", "category"],
+          "query": [
+            {
+              "key": "category",
+              "value": "HomeNeeds"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read Expenses by Name",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/expense/name?name=ves",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["expense", "name"],
+          "query": [
+            {
+              "key": "name",
+              "value": "ves"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read Expense by id",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/expense/2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["expense", "2"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Expense by id",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/expense/2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["expense", "2"]
+        }
+      },
+      "response": []
+    }
+  ]
 }
