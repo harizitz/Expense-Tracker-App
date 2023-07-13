@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.expensetracker</groupId>
-	<artifactId>Expense_Tracker</artifactId>
+	<artifactId>Expense_backend_MySQL</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Expense_Tracker</name>
+	<name>Expense_backend_MySQL</name>
 	<description>Expense Tracker APP API</description>
 	<properties>
 		<java.version>11</java.version>
