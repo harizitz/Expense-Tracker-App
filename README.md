@@ -6,15 +6,15 @@ A simple CRUD app which can add/delete expense details and can view and edit tho
 
 ## Tech Stack ✨ :
 
--  **ReactJS**
-- **REST API**
--  **Spring Boot** 
-- **Spring Security**
-- **JWT Authentication**
--  **MySQL**
+-  ReactJS 
+- REST API
+-  Spring Boot
+- Spring Security
+- JWT Authentication
+-  MySQL
 
 
-## Features
+## Features 🚀
 
 - Allows users to Signup/Login 
 - Allows users to Add/Update/Delete expenses
