@@ -49,8 +49,14 @@ function ViewExpense() {
             <h6>Description : {item.description}</h6>
             <h6>Amount : {item.amount}</h6>
             <h6>Category : {item.category}</h6>
-            <h6>Created Date : {item.createdDate}</h6>
-            <h6>Updated Date : {item.updatedDate}</h6>
+            <h6>
+              Created Date :{" "}
+              {new Date(item.createdDate).toLocaleDateString("en-GB")}
+            </h6>
+            <h6>
+              Updated Date :{" "}
+              {new Date(item.updatedDate).toLocaleDateString("en-GB")}
+            </h6>
             <Link to={`/updateexpense/${item.id}`} className="btn btn-warning">
               Edit
             </Link>

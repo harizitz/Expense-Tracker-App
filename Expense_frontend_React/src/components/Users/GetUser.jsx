@@ -38,7 +38,9 @@ function GetUser() {
       <br />
       <h5>Age : {user.age}</h5>
       <br />
-      <h5>Created At : {user.createdAt}</h5>
+      <h5>
+        Created At : {new Date(user.createdAt).toLocaleDateString("en-GB")}
+      </h5>
       <br />
     </div>
   );
