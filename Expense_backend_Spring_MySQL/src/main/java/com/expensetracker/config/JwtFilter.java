@@ -24,7 +24,7 @@ public class JwtFilter extends OncePerRequestFilter {
 	@Autowired
 	private CustomUserDetailsService customUserDetailsService;
 
-	// This class is for validating the token
+	// This method is for validating the token
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {

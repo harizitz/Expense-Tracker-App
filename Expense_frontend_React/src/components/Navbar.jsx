@@ -28,20 +28,19 @@ function Navbar() {
               Get User
             </Link>
           </li>
-          <li className="navbar-item">
-            <Link
-              onClick={() => {
-                if (window.confirm("Are you sure to logout?")) {
-                  sessionStorage.clear();
-                  window.location = "/";
-                }
-              }}
-              className="btn btn-danger"
-            >
-              Logout
-            </Link>
-          </li>
         </ul>
+        <div class="col-md-8 text-right"></div>
+        <Link
+          onClick={() => {
+            if (window.confirm("Are you sure to logout?")) {
+              sessionStorage.clear();
+              window.location = "/";
+            }
+          }}
+          className="btn btn-danger"
+        >
+          Logout
+        </Link>
       </div>
     </nav>
   );
