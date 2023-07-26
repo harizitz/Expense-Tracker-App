@@ -15,6 +15,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+
 @Component
 public class JwtFilter extends OncePerRequestFilter {
 
@@ -30,15 +31,16 @@ public class JwtFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 
 		// User will log in using the header "Authorization: Bearer <token>"
-		String header = null;
+		String header = request.getHeader("Authorization");
 		String token = null;
-		header = request.getHeader("Authorization");
-
+		
 		// To remove Bearer
 		if (header != null && header.startsWith("Bearer ")) {
 			token = header.substring(7);
 		}
-		if (token != null) {
+
+		if (token != null && !token.equalsIgnoreCase("null")) {
+
 			// Getting user details to store token in security context
 			String username = jwtUtil.getUsernameFromToken(token);
 			UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
@@ -51,7 +53,6 @@ public class JwtFilter extends OncePerRequestFilter {
 		}
 
 		filterChain.doFilter(request, response);
-
 	}
 
 }

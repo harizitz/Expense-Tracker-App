@@ -44,7 +44,6 @@ function ViewExpense() {
         return (
           <div key={key} className="form-control">
             <br />
-            <h6>Id: {item.id}</h6>
             <h6>Name : {item.name}</h6>
             <h6>Description : {item.description}</h6>
             <h6>Amount : {item.amount}</h6>

@@ -37,7 +37,6 @@ public class ClientUserService {
 		fetchedUser.setName(user.getName());
 		fetchedUser.setEmail(user.getEmail());
 		fetchedUser.setAge(user.getAge());
-		fetchedUser.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 		return userrepo.save(fetchedUser);
 	}
 

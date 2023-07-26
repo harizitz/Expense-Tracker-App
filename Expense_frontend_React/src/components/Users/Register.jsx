@@ -5,7 +5,8 @@ function Register() {
   const [user, setUser] = useState({
     name: "",
     email: "",
-    age: 0,
+    password: "",
+    age: "",
   });
 
   const handler = (e) => {
@@ -13,16 +14,27 @@ function Register() {
   };
 
   const register = (e) => {
-    axios
-      .post("http://localhost:8080/register", user)
-      .then(() => {
-        console.log("registered");
-        alert("Registered ! Please login");
-        window.location = "/login";
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (
+      user.name === "" ||
+      user.email === "" ||
+      user.age === "0" ||
+      user.age === "" ||
+      user.password === ""
+    ) {
+      alert("Please fill all the fields with valid values");
+    } else {
+      console.log(user);
+      axios
+        .post("http://localhost:8080/register", user)
+        .then(() => {
+          console.log("registered");
+          alert("Registered ! Please login");
+          window.location = "/login";
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
     e.preventDefault();
   };
 
@@ -32,7 +44,7 @@ function Register() {
       <h3>Register</h3>
       <form onSubmit={register}>
         <div className="form-group">
-          <label>Name </label>
+          <label>Name *</label>
           <input
             type="name"
             id="name"
@@ -42,7 +54,7 @@ function Register() {
         </div>
         <br />
         <div className="form-group">
-          <label>Email </label>
+          <label>Email *</label>
           <input
             type="email"
             id="email"
@@ -52,7 +64,7 @@ function Register() {
         </div>
         <br />
         <div className="form-group">
-          <label>Password </label>
+          <label>Password *</label>
           <input
             type="password"
             id="password"
@@ -62,7 +74,7 @@ function Register() {
         </div>
         <br />
         <div className="form-group">
-          <label>Age </label>
+          <label>Age *</label>
           <input
             type="number"
             id="age"

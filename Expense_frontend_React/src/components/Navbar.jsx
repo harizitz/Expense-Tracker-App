@@ -29,7 +29,7 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <div class="col-md-8 text-right"></div>
+        <div className="col-md-8 text-right"></div>
         <Link
           onClick={() => {
             if (window.confirm("Are you sure to logout?")) {

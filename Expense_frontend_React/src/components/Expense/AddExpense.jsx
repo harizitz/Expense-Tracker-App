@@ -6,7 +6,7 @@ function AddExpense() {
   const [expense, setExpense] = useState({
     name: "",
     description: "",
-    amount: 0,
+    amount: "0",
     category: "",
   });
 
@@ -15,17 +15,27 @@ function AddExpense() {
   };
 
   const saver = (e) => {
-    axios
-      .post("http://localhost:8080/addExpense/", expense, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then(() => {
-        alert("Added Successfully");
-        window.location = "/";
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (
+      expense.name === "" ||
+      expense.description === "" ||
+      expense.amount === "0" ||
+      expense.amount === "" ||
+      expense.category === ""
+    ) {
+      alert("Please fill all the fields with valid values");
+    } else {
+      axios
+        .post("http://localhost:8080/addExpense/", expense, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then(() => {
+          alert("Added Successfully");
+          window.location = "/";
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
     e.preventDefault();
   };
 

@@ -17,17 +17,27 @@ function UpdateExpense(props) {
   };
 
   const saver = (e) => {
-    axios
-      .put("http://localhost:8080/update/" + params.id, expense, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then(() => {
-        alert("Updated");
-        window.location = "/";
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (
+      expense.name === "" ||
+      expense.description === "" ||
+      expense.amount === "0" ||
+      expense.amount === "" ||
+      expense.category === ""
+    ) {
+      alert("Please fill all the fields with valid values");
+    } else {
+      axios
+        .put("http://localhost:8080/update/" + params.id, expense, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then(() => {
+          alert("Updated");
+          window.location = "/";
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
     e.preventDefault();
   };
 

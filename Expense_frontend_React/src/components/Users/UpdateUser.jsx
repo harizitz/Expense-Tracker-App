@@ -12,17 +12,26 @@ function UpdateUser() {
   });
 
   const update = (e) => {
-    axios
-      .put("http://localhost:8080/profile", user, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then(() => {
-        alert("Updated");
-        window.location = "/getuser";
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (
+      user.name === "" ||
+      user.email === "" ||
+      user.age === "0" ||
+      user.age === ""
+    ) {
+      alert("Please fill all the fields with valid values");
+    } else {
+      axios
+        .put("http://localhost:8080/profile", user, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then(() => {
+          alert("Updated");
+          window.location = "/getuser";
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
     e.preventDefault();
   };
 
@@ -66,16 +75,6 @@ function UpdateUser() {
             type="email"
             id="email"
             value={user.email}
-            onChange={handler}
-            className="form-control"
-          />
-        </div>
-        <br />
-        <div className="form-group">
-          <label>Password </label>
-          <input
-            type="password"
-            id="password"
             onChange={handler}
             className="form-control"
           />

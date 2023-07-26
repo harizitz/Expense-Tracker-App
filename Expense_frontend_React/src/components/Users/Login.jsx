@@ -12,17 +12,21 @@ function Login() {
   };
 
   const login = (e) => {
+    if (user.email === "" || user.password === "") {
+      alert("Please enter a valid data");
+    } else {
+      axios
+        .post("http://localhost:8080/login", user)
+        .then((response) => {
+          sessionStorage.setItem("jwtToken", response.data.jwtToken);
+          alert("Login Successful !");
+          window.location = "/";
+        })
+        .catch(() => {
+          alert("Invalid Credentials");
+        });
+    }
     e.preventDefault();
-    axios
-      .post("http://localhost:8080/login", user)
-      .then((response) => {
-        sessionStorage.setItem("jwtToken", response.data.jwtToken);
-        alert("Login Successful !");
-        window.location = "/";
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   };
 
   return (
@@ -30,7 +34,7 @@ function Login() {
       <br /> <h3>Login</h3>
       <form onSubmit={login}>
         <div className="form-group">
-          <label>Email </label>
+          <label>Email *</label>
           <input
             type="email"
             onChange={emailHandler}
@@ -39,7 +43,7 @@ function Login() {
         </div>
         <br />
         <div className="form-group">
-          <label>Password </label>
+          <label>Password *</label>
           <input
             type="password"
             onChange={passwordHandler}
